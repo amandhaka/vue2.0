@@ -2,16 +2,21 @@
   <div>
     <navbar />
       <h1>Login Page</h1>
-      <p>{{ $store.getters.login }}</p>
+      <p>{{this.$store.state.isLogin}}</p>
+      <p>{{ login }}</p>
   </div>
 </template>
 
 <script>
 import navbar from '@/components/navbar.vue'
+import { mapGetters } from 'vuex'
 export default {
   name: 'login',
   components: {
     navbar: navbar
+  },
+  computed: {
+    ...mapGetters(['login'])
   }
 }
 </script>

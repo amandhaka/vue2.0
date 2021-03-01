@@ -12,11 +12,13 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'navbar',
   methods: {
+    ...mapActions(['setLoginAction']),
     clicked () {
-      this.$store.dispatch('setLoginAction', 'NEW VALUE')
+      this.setLoginAction('New Value')
     }
   }
 }
@@ -26,9 +28,9 @@ export default {
     height: 50px;
     background-color: aqua;
     width: 100vw;
+    text-align: center;
 }
 a{
     margin:10px;
-    margin-top:10px;
 }
 </style>
