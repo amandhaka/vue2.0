@@ -1,9 +1,5 @@
 <template>
   <nav class='navbar'>
-      <a href="/">Product</a>
-      <a href="/user/:username">User</a>
-      <a href="/login">Login</a>
-
       <router-link to="/">Product</router-link>
       <router-link to="/user/:username">User</router-link>
       <router-link to="/login">login</router-link>
@@ -30,7 +26,7 @@ export default {
     width: 100vw;
     text-align: center;
 }
-a{
-    margin:10px;
+.router-link {
+    margin:10 px;
 }
 </style>

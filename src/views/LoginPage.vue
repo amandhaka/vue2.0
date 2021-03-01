@@ -2,7 +2,9 @@
   <div>
     <navbar />
       <h1>Login Page</h1>
-      <p>{{this.$store.state.isLogin}}</p>
+      <ul>
+        <li v-for="todo in getTodo" :key="todo.id" :class="String(todo.completed)">{{ todo.title }}</li>
+      </ul>
       <p>{{ login }}</p>
   </div>
 </template>
@@ -16,11 +18,16 @@ export default {
     navbar: navbar
   },
   computed: {
-    ...mapGetters(['login'])
+    ...mapGetters(['login', 'getTodo'])
   }
 }
 </script>
 
 <style>
-
+  .false {
+    color:red
+  }
+  .true {
+    color:green;
+  }
 </style>
